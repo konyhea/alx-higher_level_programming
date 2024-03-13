@@ -1,5 +1,2 @@
 #!/bin/bash
-
-export PYFILE
-
-python "$PYFILE"
+python3 "$PYFILE"
