@@ -9,7 +9,7 @@
 
 int check_cycle(listint_t *list)
 {
-	list_t *slw = list, *fst = list;
+	listint_t *slw = list, *fst = list;
 	
 	if (!list)
 	return (0);
