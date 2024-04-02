@@ -6,4 +6,3 @@ for i in range(0, 10):
             print('89')
         else:
             print('{}{}'.format(i, j), end=', ')
-print()
