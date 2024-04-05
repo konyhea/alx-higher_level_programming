@@ -11,6 +11,5 @@ def safe_print_integer_err(value):
         print("Exception:", e, file=sys.stderr)
         return False
     except TypeError as e:
-        print("Exception",e, file=sys.stderr)
+        print("Exception:", e, file=sys.stderr)
         return False
-    
