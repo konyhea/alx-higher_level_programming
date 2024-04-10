@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-class LockedClass(object):
+class LockedClass:
     """ A class that prevents the user from dynamicallly creating
     new instances attributes
     """
