@@ -63,7 +63,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-
     def area(self):
         """
         method that finds the area of the rectangle
@@ -82,8 +81,10 @@ class Rectangle:
     def __str__(self):
         """ print the rectangle with the character #"""
         result = ""
-        for _ in range(self.__height):
-            result += '#' * self.__width + '\n'
+        for i in range(self.__height):
+            result += '#' * self.__width 
+            if i != self.__height - 1:
+                result += '\n'
         return result
 
     def __repr__(self):

@@ -81,6 +81,8 @@ class Rectangle:
     def __str__(self):
         """ print the rectangle with the character #"""
         result = ""
-        for _ in range(self.__height):
-            result += '#' * self.__width + '\n'
+        for i in range(self.__height):
+            result += '#' * self.__width 
+            if i != self.__height - 1:
+                result += '\n'
         return result
