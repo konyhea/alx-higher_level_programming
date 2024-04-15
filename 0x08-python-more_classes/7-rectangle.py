@@ -5,6 +5,9 @@
 
 
 class Rectangle:
+    """ counter of instance and deletion """
+    number_of_instances = 0
+
     """
     A class for designing rectangle
 
@@ -26,6 +29,7 @@ class Rectangle:
         """
         self.__width = width
         self.__height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -41,7 +45,7 @@ class Rectangle:
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
 
@@ -59,7 +63,7 @@ class Rectangle:
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
-        elif value < 0:
+        if value < 0:
             raise ValueError("width must be >= 0")
         self.__height = value
 
@@ -84,3 +88,14 @@ class Rectangle:
         for _ in range(self.__height):
             result += '#' * self.__width + '\n'
         return result
+
+    def __repr__(self):
+        """ return a string reprsentation of the rectangle to be able
+        to recreate new instances
+        """
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """ detect when deletion """
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
