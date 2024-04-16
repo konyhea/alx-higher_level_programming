@@ -3,4 +3,5 @@
 
 
 def is_kind_of_class(obj, a_class):
+    """same class or inherited"""
     return isinstance(obj, a_class)
