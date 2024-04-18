@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 "importing json library"
+import json
 "function that returns the JSON representation of an object"
 
 

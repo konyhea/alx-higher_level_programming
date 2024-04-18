@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-import json
 "importing json library"
+import json
 "function that writes object to a text file using JSon"
 
 
