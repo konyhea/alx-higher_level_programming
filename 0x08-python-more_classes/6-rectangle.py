@@ -15,6 +15,8 @@ class Rectangle:
     height : int
         the height of the rectangle
     """
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         Parameters
@@ -26,6 +28,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -63,7 +66,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-
     def area(self):
         """
         method that finds the area of the rectangle
@@ -80,11 +82,13 @@ class Rectangle:
         return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        """ print the rectangle with the character #"""
-        result = ""
+        '''display # to stdout'''
+        display = str()
+        if self.__width == 0 or self.__height == 0:
+            return display
         for _ in range(self.__height):
-            result += '#' * self.__width + '\n'
-        return result
+            display += '#' * self.__width + '\n'
+        return display[:1]
 
     def __repr__(self):
         """ return a string reprsentation of the rectangle to be able

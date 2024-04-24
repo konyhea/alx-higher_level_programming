@@ -63,7 +63,6 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
-
     def area(self):
         """
         method that finds the area of the rectangle
@@ -81,10 +80,13 @@ class Rectangle:
 
     def __str__(self):
         """ print the rectangle with the character #"""
-        result = ""
+        '''str representation of #'''
+        display = str()
+        if self.__width == 0 or self.__height == 0:
+            return display
         for _ in range(self.__height):
-            result += '#' * self.__width + '\n'
-        return result
+            display += '#' * self.__width + '\n'
+        return display[:1]
 
     def __repr__(self):
         """ return a string reprsentation of the rectangle to be able
