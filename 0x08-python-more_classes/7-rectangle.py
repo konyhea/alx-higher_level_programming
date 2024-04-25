@@ -83,7 +83,7 @@ class Rectangle:
         return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        '''display # to stdout'''
+        '''display # to standard o/p'''
         display = str()
         if self.__width == 0 or self.__height == 0:
             return display
