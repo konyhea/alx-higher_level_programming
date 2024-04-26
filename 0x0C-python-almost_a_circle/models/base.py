@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 '''import varaint'''
 import json
-
+from os import path
+import csv
 
 
 class Base:
@@ -32,11 +33,33 @@ class Base:
         return json.loads(json_string)
 
     @classmethod
-    def save_to_file(cls, list_objs): 
+    def save_to_file(cls, list_objs):
         ''''method that writes the JSON string to a file'''
-        fileName  = "{}.json".format(cls.__name__)
+        fileName = "{}.json".format(cls.__name__)
         if list_objs is not None:
-            list_objs = [objs.to_dictionaary() for objs in list_objs]
+            list_objs = [objs.to_dictionary() for objs in list_objs]
         with open(fileName, "w") as f:
             f.write(cls.to_json_string(list_objs))
 
+    @classmethod
+    def create(cls, **dictionary):
+        '''that returns an instance with all attributes already set'''
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls is Rectangle:
+            new = Rectangle(1, 1)
+        elif cls is Square:
+            new = Square(1)
+        else:
+            new = None
+        new.update(**dictionary)
+        return new
+
+    @classmethod
+    def load_from_file(cls):
+        '''returns a list of instances'''
+        file = "{}.json".format(cls.__name__)
+        if not path.isfile(file):
+            return []
+        with open(file, "r") as f:
+            return [cls.create(**d) for d in cls.from_json_string(f.read())]
