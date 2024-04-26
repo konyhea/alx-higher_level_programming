@@ -44,6 +44,5 @@ class Rectangle(BaseGeometry):
 class Square(Rectangle):
     """sub class of Rectangle"""
     def __init__(self, size):
-        super().__init__()
-        self.integer_validator("size", size)
+        super().__init__(size, size)
         self.__size = size
