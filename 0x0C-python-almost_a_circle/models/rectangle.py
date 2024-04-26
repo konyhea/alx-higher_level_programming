@@ -65,10 +65,11 @@ class Rectangle(Base):
         '''validates method for value'''
         if type(value) is not int:
             raise TypeError(f"{name} must be an integer")
-        if not valid and value <= 0:
-            raise ValueError(f"{name} musr be > 0")
-        elif valid and value < 0:
+        if valid and value < 0:
             raise ValueError(f"{name} must be >= 0")
+        elif not valid and value <= 0:
+            raise ValueError(f"{name} musr be > 0")
+            
 
     def area(self):
         '''calculate area of'''
