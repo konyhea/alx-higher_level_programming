@@ -11,4 +11,4 @@ def add_attribute(obj, attr, value):
                                     '__dict__' in type(obj).__slots__):
         setattr(obj, attr, value)
     else:
-        raise TypeError("Can't add new attribute")
+        raise TypeError("can't add new attribute")
