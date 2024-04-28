@@ -84,12 +84,10 @@ class Rectangle:
 
     def __str__(self):
         '''display # to standard o/p'''
-        display = str()
         if self.__width == 0 or self.__height == 0:
-            return display
-        for _ in range(self.__height):
-            display += str(Rectangle.print_symbol) * self.__width + '\n'
-        return display[:-1]
+            return ""
+        return ((str(self.print_symbol) * self.__width + "\n") *
+                self.height)[:-1]
 
     def __repr__(self):
         """ return a string reprsentation of the rectangle to be able
