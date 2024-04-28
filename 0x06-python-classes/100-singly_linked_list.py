@@ -16,7 +16,7 @@ class Node:
     @data.setter
     def data(self, value):
         '''data setter'''
-        if isinstance(value, int) is not int:
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
@@ -27,13 +27,14 @@ class Node:
 
     @next_node.setter
     def next_node(self, value):
-        ''''next node setter'''
-        if isinstance(value, None) is not None:
+        '''next node setter'''
+        if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
 
 class SinglyLinkedList:
+    '''represent singly linked list'''
     def __init__(self):
         '''constructor'''
         self.__head = None
@@ -49,11 +50,10 @@ class SinglyLinkedList:
             self.__head = new
         else:
             tmp = self.__head
-            while (tmp.next_node is not None and
-                    tmp.next_node.data < value):
+            while tmp.next_node is not None and tmp.next_node.data < value:
                 tmp = tmp.next_node
-                new.next_node = tmp.next_node
-                tmp.next_node = new
+            new.next_node = tmp.next_node
+            tmp.next_node = new
 
     def __str__(self):
         '''print singly linked list'''
@@ -62,4 +62,4 @@ class SinglyLinkedList:
         while tmp is not None:
             data.append(str(tmp.data))
             tmp = tmp.next_node
-            return ('\n'.join(data))
+        return '\n'.join(data)
