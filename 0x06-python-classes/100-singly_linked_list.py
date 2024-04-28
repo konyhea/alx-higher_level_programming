@@ -3,6 +3,7 @@
 
 
 class Node:
+    '''node class'''
     def __init__(self, data, next_node=None):
         '''constructor'''
         self.data = data
