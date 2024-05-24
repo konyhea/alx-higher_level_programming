@@ -1,6 +1,3 @@
--- Using the hbtn_0d_tvshows database
-USE hbtn_0d_tvshows;
-
 -- Single SELECT statement with INNER JOIN and ORDER BY clause
 SELECT tv_shows.title, tv_show_genres.genre_id
 FROM tv_shows
