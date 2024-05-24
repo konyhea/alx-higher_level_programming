@@ -1,3 +1,4 @@
+-- List all db with genresof the show Dexter
 SELECT 
     tvsg.genre_id AS genre,
     COUNT(tsg.show_id) AS number_of_shows
