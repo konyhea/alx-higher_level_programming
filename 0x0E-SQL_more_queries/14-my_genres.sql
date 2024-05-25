@@ -1,13 +1,14 @@
+-- List all genres of my show
 SELECT 
-    tvg.name
+    tv_genres.name
 FROM 
-    tv_show_genres tsg
+    tv_genres
 JOIN 
-    tv_shows ts ON tsg.show_id = ts.id
+    tv_show_genres  ON id = tv_show_genres.genre_id
 JOIN 
-    tv_genres tvg ON tsg.genre_id = tvg.id
+    tv_shows ON tv_shows.id = tv_show_genres.show_id
 WHERE 
-    ts.title = 'Dexter'
+    tv_shows.title = 'Dexter'
 ORDER BY 
-    tvg.name ASC;
+    tv_genres.name ASC;
 
