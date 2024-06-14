@@ -7,14 +7,14 @@ This function is very simple, it returns the first and last name of a user
 ::
         >>> say_my_name = __import__('3-say_my_name').say_my_name
         >>> say_my_name("john")
-        My name is john
+        My name is john 
 
         >>> say_my_name("Aje", "Bayo")
         My name is Aje Bayo
 
         >>> say_my_name("Bayo" "Phil")
-        My name is BayoPhil
-
+        My name is BayoPhil 
+        
         >>> say_my_name("Bayo",      "Phil")
         My name is Bayo Phil
 
@@ -50,3 +50,5 @@ handling integers or floats
         >>> say_my_name(44, 89)
         Traceback (most recent call last):
         TypeError: first_name must be a string
+
+
