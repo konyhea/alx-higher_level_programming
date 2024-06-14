@@ -1,0 +1,83 @@
+===============================
+ integers addition function
+===============================
+
+This library is very simple, since it only has one function called
+``def add_integer(a, b=98)``.
+
+Numbers
+=======
+
+``def add_intgers(a, b=98)`` returns the an integer addition of a and b
+
+::
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
+
+::
+    >>> add_integer(1, -1)
+    0
+
+::
+   >>> add_integer(0, 0)
+   0
+
+It also works with floating-point values.
+
+::
+
+    >>> add_integer(3.98, 2)
+    5
+
+::
+    >>> add_integer(1.5, 1.5)
+    2
+
+::
+    >>> add_integer(1.90, 3)
+    4
+
+When no element is added in the function
+
+::
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+when one element is added in a positional
+
+::
+    >>> add_integer(1)
+    99
+
+Non-Numbers
+===========
+
+`` add_integer()`` expects that both arguments are either floats or int.
+if neither, it raise a TypeError
+
+::
+    >>> add_integer(4, "BREAD")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+::
+    >>> add_integer("apple")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Nan
+========
+
+::
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(7, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+
