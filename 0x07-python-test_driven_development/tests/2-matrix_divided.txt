@@ -1,4 +1,4 @@
-How to use matrix_divided
+ow to use matrix_divided
 =========================
 
 `` def matrix_divided(matrix, div) `` returns a new matrix that is a copy of matrix divided by div
@@ -32,7 +32,6 @@ handling with floating numbers
         >>> print(matrix_divided(matrix, 2.59))
         [[4.25, 0.81, 1.2], [1.54, 1.97, 0.04]]
 
-
 ::
         >>> matrix = [
         ... [1, 2, 3],
@@ -53,7 +52,9 @@ handling with floating numbers
         >>> print(matrix_divided())
         Traceback (most recent call last):
         TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
-:
+
+
+::
         >>> matrix = None
         >>> print(matrix_divided(matrix, 2.59))
         Traceback (most recent call last):
@@ -111,6 +112,7 @@ when div is not an integer or float
         Traceback (most recent call last):
         TypeError: div must be a number
 
+
 ::
         >>> matrix = [
         ... [1, 2, 3],
@@ -119,3 +121,5 @@ when div is not an integer or float
         >>> print(matrix_divided(matrix, 0))
         Traceback (most recent call last):
         ZeroDivisionError: division by zero
+
+
