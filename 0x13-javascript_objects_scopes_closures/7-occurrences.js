@@ -1,4 +1,4 @@
-#!/usr/bin/ode
+#!/usr/bin/node
 
 exports.nbOccurences = function (list, searchElement) {
   let identicalElements = 0; // Corrected variable name
