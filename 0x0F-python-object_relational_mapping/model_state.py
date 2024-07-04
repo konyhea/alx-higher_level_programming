@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """ Define state model"""
-from sqlalchemy import create_engine, Column, Integer, String
+from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
-# Declare a mapping
+
 Base = declarative_base()
 
 
@@ -17,6 +17,3 @@ class State(Base):
                 unique=True, nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
 
-
-# Create all tables in the engine
-Base.metadata.create_all(engine)
