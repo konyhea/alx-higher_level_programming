@@ -28,7 +28,7 @@ def main():
 
     '''The query for collecting from the SQL db'''
     query = (
-        "SELECT * FROM states WHERE states.name LIKE 'N%'\
+        "SELECT * FROM states WHERE states.name LIKE BINARY 'N%'\
             ORDER BY states.id ASC"
     )
     cur.execute(query)

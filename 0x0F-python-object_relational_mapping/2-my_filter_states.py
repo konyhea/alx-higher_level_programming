@@ -26,11 +26,9 @@ def main():
     cur = db.cursor()
 
     '''Execute a query with a parameter'''
-    query = (
-        "SELECT * FROM states WHERE states.name = %s\
-            ORDER BY states.id ASC"
-    )
-    cur.execute(query, (state_name,))
+    query = "SELECT * FROM states WHERE name = '{}'\
+        ORDER BY id ASC".format(state_name)
+    cur.execute(query)
 
     '''Fetch and print the results'''
     for state in cur.fetchall():
