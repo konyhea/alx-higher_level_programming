@@ -2,21 +2,8 @@
 '''
 Class definition for Base model and State class
 '''
-
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-
-# Database configuration
-username = 'your_username'
-password = 'your_password'
-host = 'localhost'
-port = 3306
-database = 'your_database'
-
-db_url = f'mysql+mysqldb://{username}:{password}@{host}:{port}/{database}'
-
-# Create engine
-engine = create_engine(db_url, echo=True)
 
 # Declare a mapping
 Base = declarative_base()
