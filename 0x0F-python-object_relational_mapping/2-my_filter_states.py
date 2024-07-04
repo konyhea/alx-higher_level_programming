@@ -26,7 +26,7 @@ def main():
     cur = db.cursor()
 
     '''Execute a query with a parameter'''
-    query = "SELECT * FROM states WHERE name = '{}'\
+    query = "SELECT * FROM states WHERE BINARY name = '{}'\
         ORDER BY id ASC".format(state_name)
     cur.execute(query)
 
