@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-'''
-Class definition for Base model and State class
-'''
+""" Define state model"""
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
