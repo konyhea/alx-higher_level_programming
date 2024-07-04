@@ -8,13 +8,15 @@ import sys
 
 def main():
     '''
-    Deletes all State objects with a name containing the letter
-    a from the db
+    Write a script that prints the State object with the name 
+    passed as argument from the database hbtn_0e_6_usa
     '''
 
     username = sys.argv[1]
     password = sys.argv[2]
     db = sys.argv[3]
+    search_name = sys.argv[4]
+
     db_url = f'mysql+mysqldb://{username}:{password}\
         @localhost:3306/{db}'
     engine = create_engine(db_url)
@@ -23,11 +25,12 @@ def main():
     session = Session()
 
     states = (
-        session.query(State).filter(State.name.like('%a%')).all()
+        session.query(State).filter(State.name == search_name)
         )
-    for state in states:
-        session.delete(state)
-    session.commit()
+    if states.first():
+        print(states.first().id)
+    else:
+        print("Not found")
 
 
 if __name__ == "__main__":
