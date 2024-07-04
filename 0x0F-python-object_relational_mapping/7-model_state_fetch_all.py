@@ -1,33 +1,22 @@
 #!/usr/bin/python3
-'''Import sections'''
-from sqlalchemy.orm import sessionmaker
-from model_state import State, Base
-from sqlalchemy import create_engine
-import sys
+""" List all state objects using sqlalchemy """
 
+if __name__ == '__main__':
 
-def main():
-    '''List all state objects from the db'''
-    # Extract command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db = sys.argv[3]
-    # Database URL
-    db_url = f'mysql+mysqldb://{username}:{password}@localhost:3306/{db}'
-    # Create the engine
-    engine = create_engine(db_url)
-    # Create a configured "Session" class
+    from sys import argv
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm.session import sessionmaker, Session
+    from model_state import Base, State
+
+    username = '{}'.format(argv[1])
+    password = '{}'.format(argv[2])
+    db_name = '{}'.format(argv[3])
+
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
+                           .format(username, password, db_name))
+
     Session = sessionmaker(bind=engine)
-    # Create a Session
     session = Session()
-    # Query all State objects, ordered by id
-    states = session.query(State).order_by(State.id).all()
-    # Print each state's id and name
-    for state in states:
-        print(f'{state.id}: {state.name}')
-    # Close the session
-    session.close()
 
-
-if __name__ == "__main__":
-    main()
+    for state in session.query(State).order_by(State.id):
+        print('{}: {}'.format(state.id, state.name))
