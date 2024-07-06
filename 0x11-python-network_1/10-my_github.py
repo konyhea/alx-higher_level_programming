@@ -15,6 +15,7 @@ def main():
     print(user_id)
     if response.status_code == 401:
         print("None")
+        print()
 
 
 if __name__ == "__main__":
