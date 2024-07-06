@@ -10,9 +10,12 @@ def main():
     password = argv[2]
     url = f'https://api.github.com/user'
     response = requests.get(url, auth=(username, password))
-    user_info = response.json()
-    user_id = user_info['id']
-    print(user_id)
+    if response.status_code == 200:
+        user_info = response.json()
+        user_id = user_info['id']
+        print(user_id)
+    else:
+        return None
 
 
 if __name__ == "__main__":
