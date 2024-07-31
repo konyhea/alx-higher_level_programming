@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 // script taht prints the number of movies by characterID
 
 const request = require('request');
