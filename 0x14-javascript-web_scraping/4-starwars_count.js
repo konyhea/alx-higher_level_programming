@@ -1,22 +1,18 @@
 #!/usr/bin/node
-// script taht prints the number of movies by characterID
-
+// find the scount
 const request = require('request');
-const apiUrl = process.argv[2];
-const charID = 18;
+const url = process.argv[2];
 
-request(apiUrl, (err, response, body) => {
-  if (err) {
-    console.log(err);
-    return;
-  }
-
-  const movieData = JSON.parse(body);
+request(url, (error, response, body) => {
+  if (error) { console.log(error); }
+  const jsonBody = JSON.parse(body);
   let count = 0;
-  movieData.results.forEach(film => {
-    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${charID}/`)) {
-      count++;
+  for (const result of jsonBody.results) {
+    for (const charURL of result.characters) {
+      if (charURL.includes(18)) {
+        count++;
+      }
     }
-  });
+  }
   console.log(count);
 });
