@@ -1,4 +1,4 @@
-#!/usr/bin/enode
+#!/usr/bin/node
 // characters of star wars Movie
 const request = require('request');
 const id = process.argv[2];
