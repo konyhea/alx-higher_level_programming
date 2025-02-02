@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys
 message = (
-    "and that piece of art is useful - Dora Korpar, 2 015-10-19\n"
+    "and that piece of art is useful - Dora Korpar, 2015-10-19\n"
 )
-sys.stderr.write(message);
-sys.exit(1);
+sys.stderr.write(message)
+sys.exit(1)
