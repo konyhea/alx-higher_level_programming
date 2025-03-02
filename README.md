@@ -1,6 +1,4 @@
 # GETTING WITH PYTHON
 
 ## Starting with -HELLO PYTHON PROJECT - 
-
-started with formating in python 
-stay locked in 
+Updating python knowledge and building with python language each weekend
