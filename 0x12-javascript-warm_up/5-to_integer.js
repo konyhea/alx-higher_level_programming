@@ -1,10 +1,10 @@
-#!/usr/bin/node
+#!/usr/bin/env node
+//printing first arg and converting it to Number
 
-const args = process.argv[2];
-const parsedNumber = parseInt(args);
+let arg = Number(process.argv[2])
 
-if (isNaN(parsedNumber)) {
-  console.log('Not a number');
+if (isNaN(arg)) {
+    console.log('Not a number');
 } else {
-  console.log(`My number: ${parsedNumber}`);
+     console.log(`My number: ${arg}`)
 }
