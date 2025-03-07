@@ -1,8 +1,12 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
-let repeat = process.argv[2];
+let repeat = Number(process.argv[2]);
 
-while (repeat > 0) {
-  console.log('C is fun');
-  repeat--;
-}
+if (isNaN(repeat)) {
+    console.log('Missing number of occurences')
+} else {
+    for (let i = 0; i < repeat; i++ ) {
+         console.log('C is fun');
+    }
+  }
+
