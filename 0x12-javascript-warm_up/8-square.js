@@ -1,11 +1,13 @@
-#!/usr/bin/node
+#!/usr/bin/env node
+// printing x for a number of times
+const size = Number(process.argv[2])
 
-const size = parseInt(process.argv[2], 10);
-
-if (isNaN(size)) {
-  console.log('Missing size');
+if (Number.isNaN(size) || size <= 0) {
+    console.log('Missing size')
+    process.exit(1)
+//   return;
 } else {
-  for (let i = 0; i < size; i++) {
-    console.log('X'.repeat(size));
-  }
+     for(let i = 0; i < size; i++) {
+       console.log('X'.repeat(size))
+}
 }
