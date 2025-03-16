@@ -16,5 +16,7 @@ Python provides the `import` statement to access code defined in modules. With `
 # Importing the whole module
 import module_name
 
+# Understanding the standard Python libaray -- #$PATH 
+
 # Importing specific items from a module
 from module_name import item1, item2
