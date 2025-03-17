@@ -1,8 +1,7 @@
-#!/usr/bin/python3
-if __name__ == "__main__":
-    from add_0 import add
+#!/usr/bin/env python3
+# import add fnc from add_0
 
-    a = 1
-    b = 2
-    n = add(a, b)
-    print("{} + {} = {}".format(a, b, n))
+from add_0 import add
+a, b = 1, 2
+result = add(a, b)
+print('{} + {} = {}'.format(a, b, result))
