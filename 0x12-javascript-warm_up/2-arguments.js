@@ -1,11 +1,5 @@
-#!/usr/bin/node
+#!/usr/bin/env node
+// handling args in proces.argv
+let x = process.argv[1] 
+return x ? console.log('Argument found') : console.log('No argument');
 
-const argsLen = process.argv.length;
-
-if (argsLen < 3) {
-  console.log('No argument');
-} else if (argsLen === 3) {
-  console.log('Argument found');
-} else {
-  console.log('Arguments found');
-}
