@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-console.log('C is fun');
-console.log('Python is cool');
-console.log('JavaScript is amazing');
+let x = ['C is fun', 'Python is cool', 'Javascript is amazing']
+x.forEach(item => console.log(item))
+
+
+//console.log(...x);
