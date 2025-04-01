@@ -1,20 +1,21 @@
-#!/usr/bin/node
-class Rectangle {
-  constructor (w, h) {
-    if (w <= 0 || h <= 0 || !Number.isInteger(w) || !Number.isInteger(h)) {
-      return this;
-    }
-    this.width = w;
-    this.height = h;
-  }
+#!/uar/bin/env node
+// crate a class and a method
 
-  print () {
-    if (!this.width || !this.height) {
-      return;
-    }
-    for (let i = 0; i < this.height; i++) {
-      console.log('X'.repeat(this.width));
-    }
-  }
+class Rectangle {
+  constructor(w, h) {
+  if (w <= 0 || typeof w != 'number' || h <= 0 || typeof w != 'number') {
+      return this;
 }
-module.exports = Rectangle;
+   this.width = w;
+   this.height = h;
+}
+
+    print() {
+          for(let i = 0; i < this.height; i++) {
+              console.log('X'.repeat(this.width));
+}
+}
+}
+
+module.exports = Rectangle
+
