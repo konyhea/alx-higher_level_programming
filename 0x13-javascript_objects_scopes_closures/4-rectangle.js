@@ -1,37 +1,34 @@
-#!/usr/bin/node
+#!/uar/bin/env node
+// crate a class and a method
+
 class Rectangle {
-  constructor (w, h) {
-    if (w <= 0 || h <= 0 || !Number.isInteger(w) || !Number.isInteger(h)) {
+  constructor(w, h) {
+  if (w <= 0 || typeof w != 'number' || h <= 0 || typeof w != 'number') {
       return this;
-    }
-    this.width = w;
-    this.height = h;
-  }
-
-  print () {
-    if (!this.width || !this.height) {
-      return;
-    }
-    for (let i = 0; i < this.height; i++) {
-      console.log('X'.repeat(this.width));
-    }
-  }
-
-  rotate () {
-    if (!this.width || !this.height) {
-      return;
-    }
-    const temp = this.width;
-    this.width = this.height;
-    this.height = temp;
-  }
-
-  double () {
-    if (!this.width || !this.height) {
-      return;
-    }
-    this.width *= 2;
-    this.height *= 2;
-  }
 }
-module.exports = Rectangle;
+   this.width = w;
+   this.height = h;
+}
+
+    print() {
+          for(let i = 0; i < this.height; i++) {
+              console.log('X'.repeat(this.width));
+}
+}
+
+  rotate() {
+     let x = this.width;
+     this.width = this.height;
+     this.height = x;
+
+}
+
+   double() {
+      this.width *= 2;
+       this.height *= 2;
+}
+
+
+}
+module.exports = Rectangle
+
