@@ -2,6 +2,6 @@
 # import add fnc from add_0
 
 from add_0 import add
-a, b = 1, 2
-result = add(a, b)
-print('{} + {} = {}'.format(a, b, result))
+a = 1
+b = 1
+print("{} + {} = {}".format(a, b, add(a, b)))
