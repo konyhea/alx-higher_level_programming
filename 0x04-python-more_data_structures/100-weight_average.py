@@ -1,8 +1,13 @@
 #!/usr/bin/python3
-import functools
-
 
 def weight_average(my_list=[]):
-    num = list(map(lambda x: x[0] * x[1], my_list))
-    denum = functools.reduce(lambda a, b: a+b, [x[1] for x in my_list])
-    return sum(num) / denum
+    """fnc that returns the weighted average of all integers"""
+    if my_list is None:
+        return None
+    total_weighted = 0
+    total_weight = 0
+
+    for score, weight in my_list:
+        total_weighted += score * weight
+        total_weight += weight
+    return total_weighted / total_weight
